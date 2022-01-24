@@ -1,0 +1,31 @@
+﻿@page "/"
+@inherits GameOfLifeBase
+
+@using DevExpress.Blazor
+@using GameOfLife.Views.Components
+
+<p>Generation: @ViewModel.Generation</p>
+<Settings ViewModel="ViewModel" />
+
+<div class="grid-container" @onclick="ViewModel.SetCells">
+    @if (!ViewModel.SelfDraw)
+    {
+        @for (int i = 0; i < 2405; i++)
+        {
+            if (ViewModel.DictOfCells.Contains(new KeyValuePair<int, string>(i, "LivingCell")))
+            {
+                ViewModel.CellColor = "black";
+                <div class="grid-item" style="background-color:@ViewModel.CellColor"></div>
+            }
+            else
+            {
+                ViewModel.CellColor = "white";
+                <div class="grid-item" style="background-color:@ViewModel.CellColor"></div>
+            }
+        }
+    }
+    else
+    {
+
+    }
+</div>

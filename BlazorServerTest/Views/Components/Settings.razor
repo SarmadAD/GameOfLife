@@ -1,0 +1,25 @@
+﻿@using DevExpress.Blazor
+@using GameOfLife.ViewModel;
+
+
+<DxFormLayout>
+    <DxFormLayoutItem ColSpanMd="3" ColSpanXl="3" Caption="Anzahl Zellen">
+        <Template Context="s">
+            <DxSpinEdit ShowSpinButtons="false" @bind-Value="ViewModel.BeginnCells" MinValue="1" MaxValue="2405" NullText="Anzahl der Zellen..." ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Never"></DxSpinEdit>
+        </Template>
+    </DxFormLayoutItem>
+    <DxFormLayoutItem ColSpanMd="1" ColSpanXl="1">
+        <Template Context="f">
+            <DxButton Click=@((MouseEventArgs args)=> Task.Run(() => ViewModel.StartTheGameOfLife()))>Start</DxButton>
+        </Template>
+    </DxFormLayoutItem>
+    <DxFormLayoutItem ColSpanMd="1" ColSpanXl="1">
+        <Template Context="f">
+            <DxButton Click=@((MouseEventArgs args)=> ViewModel.StopGameOfLife())>Stop</DxButton>
+        </Template>
+    </DxFormLayoutItem>
+</DxFormLayout>
+
+@code {
+    [Parameter] public GameOfLifeViewModel ViewModel { get; set; }
+}
