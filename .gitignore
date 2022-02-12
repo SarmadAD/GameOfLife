@@ -1,0 +1,36 @@
+﻿.vs/
+.cr/
+.nuget/
+packages/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+Connection.xml
+appsettings.Development.json
+*.pubxml
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.licx
+
+# Click-Once directory
+publish/
